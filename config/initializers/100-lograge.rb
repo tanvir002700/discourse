@@ -51,6 +51,7 @@ if (Rails.env.production? && SiteSetting.logging_provider == 'lograge') || ENV["
         output = {
           params: params.to_query,
           database: RailsMultisite::ConnectionManagement.current_db,
+          process_pid: Process.pid
         }
 
         if data = (Thread.current[:_method_profiler] || event.payload[:timings])
