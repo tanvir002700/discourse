@@ -10,6 +10,10 @@ module TopicGuardian
     )
   end
 
+  def can_create_shared_draft?
+    is_staff? && SiteSetting.shared_drafts_enabled?
+  end
+
   # Creating Methods
   def can_create_topic?(parent)
     is_staff? ||

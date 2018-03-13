@@ -11,6 +11,7 @@ import { censor } from 'pretty-text/censored-words';
 import { emojiUnescape } from 'discourse/lib/text';
 import PreloadStore from 'preload-store';
 import { userPath } from 'discourse/lib/url';
+import Category from 'discourse/models/category';
 
 export function loadTopicView(topic, args) {
   const topicId = topic.get('id');
