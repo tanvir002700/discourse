@@ -238,4 +238,7 @@ after_fork do |server, worker|
   rescue => e
     Rails.logger.error("Failed to warm up pretty text: #{e}")
   end
+
+  require 'objspace'
+  ObjectSpace.trace_object_allocations_start
 end
